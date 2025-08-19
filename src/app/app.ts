@@ -1,11 +1,11 @@
-import { Component } from '@angular/core';
+import { Component } from "@angular/core";
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.html',
+  selector: "app-root",
+  templateUrl: "./app.html",
   standalone: false,
-  styleUrl: './app.css'
+  styleUrl: "./app.css",
 })
 export class App {
-  protected title = 'my-first-project';
+  protected title = "my-first-project";
 }
