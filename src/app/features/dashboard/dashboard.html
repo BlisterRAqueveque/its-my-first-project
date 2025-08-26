@@ -1,1 +1,6 @@
-<p>dashboard works!</p>
+<p>Bienvenidos al dashboard</p>
+@if (user$ | async; as user) {
+{{ user | json }}
+} @else {
+<p>nada que mostrar</p>
+}

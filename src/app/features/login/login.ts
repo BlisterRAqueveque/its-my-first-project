@@ -1,4 +1,5 @@
-import { Component } from "@angular/core";
+import { Component, inject } from "@angular/core";
+import { Auth } from "../../core/services/auth";
 
 @Component({
   selector: "app-login",
@@ -9,18 +10,18 @@ import { Component } from "@angular/core";
 export class Login {
   protected username = "";
   protected password = "";
+
+  private readonly authService = inject(Auth);
+
   login() {
     const credenciales = {
-      username: this.username,
-      password: this.password,
+      usuario: this.username,
+      clave: this.password,
     };
-
-    console.log(credenciales);
     // TODO El usuario envía sus credenciales a la API
-    throw Error("Method not implemented");
-  }
 
-  test(valor: string) {
-    console.log(valor);
+    this.authService.login(credenciales).subscribe((data) => {
+      console.log(data);
+    });
   }
 }
